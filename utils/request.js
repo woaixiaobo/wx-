@@ -2,7 +2,7 @@ import config from "./config"
 export default (url,data={},method='GET')=>{
   return new Promise((resolve,reject)=>{
     wx.request({
-      url:config.netHost2+url,
+      url:config.netHost+url,
       data,
       method, // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
       header: {
