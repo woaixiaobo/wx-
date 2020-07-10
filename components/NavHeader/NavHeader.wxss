@@ -1,0 +1,11 @@
+.header .title{
+  font-size: 28rpx;
+  color: #333;
+}
+.header .right{
+  float: right;
+  font-size: 26rpx;
+  padding: 10rpx 20rpx;
+  border: 1px solid #999;
+  border-radius: 10rpx;
+}

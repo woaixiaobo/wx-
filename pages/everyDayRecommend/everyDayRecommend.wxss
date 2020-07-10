@@ -1,0 +1,71 @@
+.header {
+  width: 100%;
+  position: relative;
+  height: 300rpx;
+}
+.header image{
+  width: 100%;
+  height: 100%;
+}
+.header .date{
+  position: absolute;
+  left: 50%;
+  top:40%;
+  transform: translateX(-50%);
+  font-weight: bold;
+  color: #fff;
+}
+.header .date .day{
+  font-size: 50rpx;
+}
+
+
+/* 滑动区域 */
+.allPlayScroll{
+  position: relative;
+  top: -20rpx;
+  padding: 20rpx;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 40rpx;
+  background-color: white;
+}
+.allPlayScroll .header1{
+  display: flex;
+  justify-content: space-between;
+}
+.allPlayScroll .header .manySelect{
+  font-size: 24rpx;
+  color: #333;
+}
+.allPlayScroll .scrollContent{
+  /* margin-top: 30rpx; */
+  height: calc(100vh - 342rpx);
+}
+.allPlayScroll .scrollContent .scrollItem{
+  position: relative;
+  margin-top: 30rpx;
+}
+.allPlayScroll .scrollContent .scrollItem image{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 10rpx;
+}
+.allPlayScroll .scrollContent .scrollItem .item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.allPlayScroll .scrollContent .scrollItem .text{
+  position: absolute;
+  top: 0;
+  left: 14%;
+}
+.allPlayScroll .scrollContent .scrollItem .text .songName{
+  font-size: 28rpx;
+}
+.allPlayScroll .scrollContent .scrollItem .text .autor{
+  font-size: 22rpx;
+  color: #333;
+}
