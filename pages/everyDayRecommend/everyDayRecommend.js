@@ -54,7 +54,7 @@ Page({
       let {index,songList} = this.data
        //根据下标找到对应的id
       if(index===songList.length-1){
-        index=0
+        index=-1
       }
       let songId = songList[index+1].id
       //跟新id

@@ -194,11 +194,14 @@ Page({
     // console.log(afterCurrentTime);
     console.log(moment(afterCurrentTime*1000).format('mm:ss'));
     //跟新状态
-    this.setData({
-      progressMove,
-      currentTime:moment(afterCurrentTime*1000).format('mm:ss'),
-      afterCurrentTime,
-    })
+    // let update = this.throttle(()=>{
+      this.setData({
+        progressMove,
+        currentTime:moment(afterCurrentTime*1000).format('mm:ss'),
+        afterCurrentTime,
+      })
+    // },100)
+    // update();
   },
   //触点结束，只有拖动时才触发
   touchEnd(event){
@@ -208,10 +211,21 @@ Page({
       appInstance.globalData.flag=false;
     }
   },
+  //自定义节流
+  throttle(callback,deplay){
+    let pre = 0;
+    return function(event){
+      const current = Date.now();
+      if(current-pre>deplay){
+        callback.call(this,event)
+        pre = current
+      }
+    }
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady() {
 
   },
 
