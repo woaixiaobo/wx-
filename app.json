@@ -1,12 +1,13 @@
 {
   "pages": [
+    "pages/everyDayRecommend/everyDayRecommend",
     "pages/index/index",
     "pages/songDetail/songDetail",
-    "pages/everyDayRecommend/everyDayRecommend",
     "pages/video/video",
     "pages/login/login",
     "pages/personal/personal"
   ],
+  "requiredBackgroundModes": ["audio", "location"],
   "window": {
     "navigationBarBackgroundColor": "#d43c33",
     "navigationBarTextStyle": "white",

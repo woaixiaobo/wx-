@@ -54,6 +54,19 @@
   color: #fff;
 }
 
+.diskAnimation{
+  animation: disc 3s linear infinite;
+  animation-delay: 0.8s;
+}
+@keyframes disc {
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+
 .diskContainer .needle{
   position: absolute;
   top: 84rpx;
@@ -62,6 +75,10 @@
   height: 274rpx;
   transform-origin: left top;
   transform: rotate(-20deg);
+}
+.diskContainer .needle.transition{
+  transform: rotate(0);
+  transition:transform 1s;
 }
 .diskContainer .needle image{
   width: 100%;

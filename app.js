@@ -1,5 +1,10 @@
 //app.js
 App({
+  globalData:{
+    isMusicolay:false,//是否再播放
+    musicId:null,//id，用来判断点击的音乐是不是同一个
+    flag:null,//状态是否为拖动
+  },
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []

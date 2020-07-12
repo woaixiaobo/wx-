@@ -17,7 +17,7 @@
       <view class="scrollItem" wx:for="{{songList}}" wx:key="id">
         <view class="item">
           <image src="{{item.album.blurPicUrl}}"></image>
-          <text class="iconfont icon-gengduo" bindtap="handleId" data-id="{{item.id}}"  data-name="{{item.name}}"></text>
+          <text class="iconfont icon-gengduo" bindtap="handleId" data-id="{{item.id}}"  data-index="{{index}}"></text>
         </view>
         <view class="text">
           <view class="songName">{{item.name}}</view>

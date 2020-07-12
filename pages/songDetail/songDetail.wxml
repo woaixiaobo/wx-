@@ -2,11 +2,11 @@
   <!-- 磁盘区域 -->
   <view class="diskContainer">
     <view class="auto">{{songDetail.ar[0].name}}</view>
-    <view class="disk">
+    <view class="disk {{isPlay?'diskAnimation':''}}" >
       <image class="yuan" src="../../static/images/song/disc.png"></image>
       <image class="picImg" src="{{songDetail.al.picUrl}}"></image>
     </view>
-    <view class="needle">
+    <view class="needle {{isPlay?'transition':''}}" >
       <image src="../../static/images/song/needle.png"></image>
     </view>
     <view class="yaundian"></view>
@@ -14,7 +14,7 @@
   <!-- 进度条部分 -->
   <view class="progressContanier">
     <text class="start">{{currentTime}}</text>
-    <view class="progress">
+    <view class="progress" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd">
       <view class="progressWidth" style="width: {{progressMove + '%'}};">
         <view class="progressTime"></view>
       </view>
@@ -24,9 +24,9 @@
   <!-- 底部功能区 -->
   <view class="musicControl">
     <text class="iconfont icon-iconsMusicyemianbofangmoshiShuffle" ></text>
-    <text class="iconfont icon-shangyishou" bindtap="switchSong" ></text>
+    <text class="iconfont icon-shangyishou" bindtap="preSong" ></text>
     <text class="iconfont {{isPlay?'icon-zanting': 'icon-bofang'}} big" bindtap="play"></text>
-    <text class="iconfont icon-next"></text>
+    <text class="iconfont icon-next" bindtap="nextSong"></text>
     <text class="iconfont icon-iconsMusicyemianbofangmoshiPlayList"></text>
   </view>
 </view>
