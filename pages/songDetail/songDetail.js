@@ -44,6 +44,10 @@ Page({
       this.getSongPlay(ids)
       //歌曲初始化
       this.songInit(result,ids);
+      this.setData({
+        currentTime:'00:00',
+        progressMove:0,
+      })
     }) 
     //歌曲初始化
     this.songInit(result,ids);
@@ -56,9 +60,7 @@ Page({
     this.setData({
       ids,
       songDetail:result.songs[0],
-      momentTime,
-      currentTime:'00:00',
-      progressMove:0,
+      momentTime
     })
       //设置页面标题
     wx.setNavigationBarTitle({
