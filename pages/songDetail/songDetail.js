@@ -38,6 +38,7 @@ Page({
       this.setData({
         songDetail:result.songs[0],
         ids:result.songs[0].id,
+        progressMove:0,
       })
       let {ids} = this.data
       //跟新音乐播放地址
