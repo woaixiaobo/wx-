@@ -10,7 +10,7 @@ export default (url,data={},method='GET')=>{
       }, // 设置请求的 header
       success: (res)=>{
         // success
-        console.log(res.data,data);
+        console.log(res.data);
         if(data.isLogin){//如果是登录请求
           wx.setStorageSync('cookies', JSON.stringify(res.cookies))
           console.log(1);
