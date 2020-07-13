@@ -128,13 +128,16 @@ Page({
   //点击播放
   play(){
     if(!this.data.isPlay){
-        //播放title 必填
-        this.BackgroundAudioManager.title=this.data.songDetail.ar[0].name
-        //播放地址
-        this.BackgroundAudioManager.src = this.data.songPlay[0].url; 
+      console.log(1);
+        if(this.BackgroundAudioManager.src !== this.data.songPlay[0].url){
+          //播放title 必填
+          this.BackgroundAudioManager.title=this.data.songDetail.ar[0].name
+          //播放地址
+          this.BackgroundAudioManager.src = this.data.songPlay[0].url;
+        }
         //播放
         // this.BackgroundAudioManager.autoplay=true
-        this.BackgroundAudioManager.startTime(this.data.currentTimeAgain);
+        this.BackgroundAudioManager.play();
         this.BackgroundAudioManager.onTimeUpdate(()=>{
           // console.log(this.InnerAudioContext.currentTime/this.InnerAudioContext.duration);
           if(!appInstance.globalData.flag){
