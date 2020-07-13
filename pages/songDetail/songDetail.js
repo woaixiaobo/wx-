@@ -38,7 +38,6 @@ Page({
       this.setData({
         songDetail:result.songs[0],
         ids:result.songs[0].id,
-        progressMove:0,
       })
       let {ids} = this.data
       //跟新音乐播放地址
@@ -58,6 +57,8 @@ Page({
       ids,
       songDetail:result.songs[0],
       momentTime,
+      currentTime:'00:00',
+      progressMove:0,
     })
       //设置页面标题
     wx.setNavigationBarTitle({
