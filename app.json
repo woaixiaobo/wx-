@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/everyDayRecommend/everyDayRecommend",
     "pages/index/index",
+    "pages/everyDayRecommend/everyDayRecommend",
     "pages/songDetail/songDetail",
     "pages/video/video",
     "pages/login/login",
