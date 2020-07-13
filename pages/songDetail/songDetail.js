@@ -15,6 +15,7 @@ Page({
     songPlay:[],//歌曲播放地址
     momentTime:0,//歌曲总时长
     currentTime:'00:00',//播放进度时间
+    currentTimeAgain:0,//重新开始播放的进度时间
     afterCurrentTime:0,//拖动后的播放时间
     progressMove:0,//进度条更新进度
     rotate:-20,
@@ -77,6 +78,7 @@ Page({
       this.BackgroundAudioManager.onTimeUpdate(()=>{
         // console.log(this.InnerAudioContext.currentTime/this.InnerAudioContext.duration);
         this.setData({
+          currentTimeAgain:this.BackgroundAudioManager.currentTime,
           currentTime:moment(this.BackgroundAudioManager.currentTime*1000).format('mm:ss'),
           progressMove:this.BackgroundAudioManager.currentTime/this.BackgroundAudioManager.duration*100,
         })
@@ -126,17 +128,18 @@ Page({
   //点击播放
   play(){
     if(!this.data.isPlay){
-      
         //播放title 必填
         this.BackgroundAudioManager.title=this.data.songDetail.ar[0].name
         //播放地址
         this.BackgroundAudioManager.src = this.data.songPlay[0].url; 
         //播放
-        this.BackgroundAudioManager.autoplay=true
+        // this.BackgroundAudioManager.autoplay=true
+        this.BackgroundAudioManager.seek(this.data.currentTimeAgain);
         this.BackgroundAudioManager.onTimeUpdate(()=>{
           // console.log(this.InnerAudioContext.currentTime/this.InnerAudioContext.duration);
           if(!appInstance.globalData.flag){
             this.setData({
+              currentTimeAgain:this.BackgroundAudioManager.currentTime,
               currentTime:moment(this.BackgroundAudioManager.currentTime*1000).format('mm:ss'),
               progressMove:this.BackgroundAudioManager.currentTime/this.BackgroundAudioManager.duration*100,
             })
