@@ -134,7 +134,7 @@ Page({
         this.BackgroundAudioManager.src = this.data.songPlay[0].url; 
         //播放
         // this.BackgroundAudioManager.autoplay=true
-        this.BackgroundAudioManager.seek(this.data.currentTimeAgain);
+        this.BackgroundAudioManager.startTime(this.data.currentTimeAgain);
         this.BackgroundAudioManager.onTimeUpdate(()=>{
           // console.log(this.InnerAudioContext.currentTime/this.InnerAudioContext.duration);
           if(!appInstance.globalData.flag){
